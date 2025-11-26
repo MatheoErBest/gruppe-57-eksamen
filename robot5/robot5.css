@@ -229,3 +229,46 @@
     transition: transform 0.3s ease;
     cursor: pointer; /*mus blir om til peker på hover*/
 }
+
+.stratosphere-transformed {
+    position: fixed;
+    top: 20%;
+    left: 60%;
+    width: 200px;
+    height: auto;
+    transform: translate(-50%, -50%) translateY(100vh) rotate(0deg);
+    z-index: 10;
+    opacity: 0;
+    pointer-events: none;
+}
+
+@keyframes fly-in {
+    0% {
+        transform: translate(-50%, -50%) translateY(100vh) rotate(0deg) scale(0.3) skewX(-20deg);
+        opacity: 0;
+        filter: blur(10px);
+    }
+    30% {
+        transform: translate(-30%, -50%) translateY(50vh) rotate(180deg) scale(0.8) skewX(-10deg);
+        opacity: 0.6;
+        filter: blur(5px);
+    }
+    70% {
+        transform: translate(-60%, -50%) translateY(5vh) rotate(300deg) scale(1.1) skewX(5deg);
+        opacity: 0.9;
+        filter: blur(2px);
+    }
+    100% {
+        transform: translate(-50%, -50%) translateY(0) rotate(360deg) scale(1) skewX(0deg);
+        opacity: 1;
+        filter: blur(0px);
+    }
+}
+
+.animation-toggle {
+    display: none;
+}
+
+.animation-toggle:checked ~ .stratosphere-transformed {
+    animation: fly-in 3s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+}

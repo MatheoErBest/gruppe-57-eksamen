@@ -7,13 +7,16 @@
     <link rel="stylesheet" href="robot5.css">
 </head>
 <body>
+    <input type="checkbox" id="animation-toggle" class="animation-toggle" hidden>
+    <img src="elements/fly.png" alt="Fly" class="stratosphere-transformed">
+    
     <div class="container">
-        
-        <!-- Gjør at bildet er på venstre side -->
+
+        <!-- Conteiner for bildet + en funksjon i css at det er på venstre side -->
         <aside class="left">
-            <div class="bilde-container" aria-hidden="true">
+            <label for="animation-toggle" class="bilde-container" role="button" tabindex="0">
                 <span class="bilde-label"><img class="stratosphere-bilde" src="elements/stratospgere.png" alt="stratosphere transformers"></span>
-            </div>
+            </label>
         </aside>
 
         <main class="center">
