@@ -231,6 +231,7 @@
 }
 
 .stratosphere-transformed {
+    mix-blend-mode: multiply;
     position: fixed;
     top: 20%;
     left: 60%;
