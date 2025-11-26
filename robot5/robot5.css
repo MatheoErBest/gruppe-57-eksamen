@@ -1,4 +1,4 @@
-
+/* Lager en global conteiner for hele siden */
 .container {
     display: grid;
     grid-template-columns: 1fr 1fr 280px;
@@ -9,10 +9,10 @@
     background: linear-gradient(180deg, silver, #345412, #345412, #cab300);
 }
 
-/* LEFT: big rounded image placeholder */
+/* Fikser at bilde er som jeg vil ha det */
 .left .bilde-container {
     width: 100%;
-    aspect-ratio: 3 / 4; /* tall rectangle like sketch */
+    aspect-ratio: 3 / 4; 
     max-width: 540px;
     margin: 0 auto;
     background: #fff;
@@ -65,7 +65,7 @@
     background: #fff;
 }
 
-/* RIGHT: specs vertical rounded box + order button */
+
 .right {
     display: flex;
     flex-direction: column;
@@ -103,7 +103,7 @@
     cursor: pointer;
 }
 
-/* Responsive: stack columns on small screens */
+/* Justerer størrelser på nettsiden om bredden er mindre enn 980pixler*/
 @media (max-width: 980px) {
     .container {
         grid-template-columns: 1fr;
@@ -127,7 +127,7 @@
     }
 }
 
-/* Modal (CSS-only) */
+
 .order-toggle {
     display: none;
 }
@@ -178,7 +178,7 @@
     pointer-events: auto;
 }
 
-/* Navigation */
+/* navigasjons meny */
 .navigation {
     position: fixed;
     bottom: 20px;
@@ -222,4 +222,10 @@
     width: 100%;
     height: auto;
     border-radius: 36px;
+}
+/*Bildet blir litt større da men hovrer*/
+.stratosphere-bilde:hover {
+    transform: scale(1.02);
+    transition: transform 0.3s ease;
+    cursor: pointer; /*mus blir om til peker på hover*/
 }

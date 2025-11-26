@@ -3,11 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Stratosphere bestilling</title>
     <link rel="stylesheet" href="robot5.css">
 </head>
 <body>
     <div class="container">
+        
+        <!-- Gjør at bildet er på venstre side -->
         <aside class="left">
             <div class="bilde-container" aria-hidden="true">
                 <span class="bilde-label"><img class="stratosphere-bilde" src="elements/stratospgere.png" alt="stratosphere transformers"></span>
@@ -15,16 +17,22 @@
         </aside>
 
         <main class="center">
+
+            <!-- Lager en tittel boks -->
             <div class="title-box">
-                <h1>Robot 5</h1>
+                <h1>Stratosphere</h1>
             </div>
 
+            <!-- Lager en boks med innhold -->
             <section class="content-box">
                 <p>Innhold</p>
             </section>
 
+            <!-- Tekstboks for kontakt info -->
             <section class="contact-box">
                 <p>Kontakt oss</p>
+                <p>Epost: helpdesk@forkulefordeg.no</p>
+                <p>Telefon: +67 8008 8008</p>
             </section>
         </main>
 
@@ -32,6 +40,7 @@
             <div class="specs-box">
                 <h2>Specs</h2>
                 <ul>
+                    <li>Pris: 1.2 millioner</li>
                     <li>Høyde: 120 cm</li>
                     <li>Vekt: 30 kg</li>
                     <li>Batteri: 12 timer</li>
@@ -45,14 +54,18 @@
     </div>
     <input type="checkbox" id="order-toggle" class="order-toggle" hidden>
 
+    <!-- lager en meny som skal komme opp da du trykker bestill -->
     <div class="modal" aria-hidden="true">
         <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modal-title">
             <h3 id="modal-title">Gratulerer!</h3>
             <p>Du har bestilt.</p>
-            <label for="order-toggle" class="order-btn modal-close">OK</label>
+
+            <!-- Knapp som lukker pop-uppen -->
+            <label for="order-toggle" class="order-btn modal-close">LUKK</label>
         </div>
     </div>
 
+    <!-- navigasjon mellom sidene -->
     <nav class="navigation">
         <a href="../robot1/robot1.html" class="nav-btn">← Robot 1</a>
         <a href="../robot2/robot2.html" class="nav-btn">Robot 2</a>
