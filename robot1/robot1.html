@@ -1,12 +1,101 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="no">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Bumblebee</title>
     <link rel="stylesheet" href="robot1.css">
 </head>
+
 <body>
-    
+
+<!-- Denne styrer popup og konfetti -->
+<input type="checkbox" id="toggle" class="toggle">
+
+<div class="page">
+
+    <!-- ØVERSTE RAD -->
+    <div class="top-row">
+
+        <div class="image-col">
+            <img src="elements/bumblebee.png" alt="Bumblebee" class="robot-img">
+        </div>
+
+        <div class="content-col">
+
+            <div class="text-block">
+                <h1>Bumblebee</h1>
+
+                <p>
+                    Møt Bumblebee, en autonom, intelligent og høyeffektiv assistent
+                    bygget for mennesker som trenger styrke, hastighet og trygghet i ett eneste system.
+                </p>
+                <p>
+                    Dette er ikke en vanlig robot. Dette er en fullverdig partner som
+                    kombinerer presisjonsteknologi, avansert læring og uovertruffen mobilitet.
+                </p>
+                <p>
+                    Bumblebee responderer raskt, tilpasser seg miljøet rundt seg og håndterer krevende oppgaver.
+                    Enten det gjelder transport, overvåkning eller støtte i hverdagen, leverer Bumblebee med
+                    en pålitelighet som få andre systemer kan matche.
+                </p>
+                <p>
+                    Dette er roboten for deg som vil ha noe som faktisk gjør jobben – og som ser rå ut mens den gjør det.
+                </p>
+            </div>
+
+            <div class="specs">
+                <h3>Specs</h3>
+                <ul>
+                    <li>Vekt: ca. 1 700 kg (bilmodus)</li>
+                    <li>Høyde: ca. 1,35 m (bil) / 5 m (robot)</li>
+                    <li>Energikilde: avansert Cybertronian energikjerne</li>
+                    <li>Materiale: Cybertronian-legering med høy slitestyrke</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- NEDERSTE RAD — KONTAKT OG BESTILL -->
+    <div class="bottom-row">
+
+        <div class="contact-box">
+            <p class="contact-title">Kontakt oss</p>
+            <p>470 67 767</p>
+            <p>Kirkegata 24, 0153 Oslo</p>
+        </div>
+
+        <!-- Dette er knappen din, urørt, men koblet til checkbox -->
+        <label for="toggle" class="order-btn">Bestill</label>
+
+    </div>
+
+</div>
+
+<!-- POPUP -->
+<div class="popup">
+    <div class="popup-box">
+        <h2>Gratulerer!</h2>
+        <p>Bestillingen din er mottatt 🎉</p>
+
+        <!-- Lukk-knappen -->
+        <label for="toggle" class="close-btn">Lukk</label>
+    </div>
+</div>
+
+<!-- KONFETTI -->
+<div class="confetti-wrap">
+    <span class="confetti c1"></span>
+    <span class="confetti c2"></span>
+    <span class="confetti c3"></span>
+    <span class="confetti c4"></span>
+    <span class="confetti c5"></span>
+    <span class="confetti c6"></span>
+    <span class="confetti c7"></span>
+    <span class="confetti c8"></span>
+    <span class="confetti c9"></span>
+    <span class="confetti c10"></span>
+</div>
+
 </body>
 </html>
