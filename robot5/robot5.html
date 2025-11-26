@@ -39,9 +39,18 @@
             </div>
 
             <div class="order-box">
-                <button class="order-btn">Bestill</button>
+                <label for="order-toggle" class="order-btn">Bestill</label>
             </div>
         </aside>
+    </div>
+    <input type="checkbox" id="order-toggle" class="order-toggle" hidden>
+
+    <div class="modal" aria-hidden="true">
+        <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+            <h3 id="modal-title">Gratulerer!</h3>
+            <p>Du har bestilt.</p>
+            <label for="order-toggle" class="order-btn modal-close">OK</label>
+        </div>
     </div>
 </body>
 </html>
