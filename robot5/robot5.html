@@ -101,39 +101,5 @@
         <span class="nav-btn nav-current">Robot 5</span>
         <a href="../main.html" class="nav-btn">Startside</a>
     </nav>
-    <script>
-        // Spiller av konfetti når #order-toggle sjekkes (Bestill)
-        document.addEventListener('DOMContentLoaded', function () {
-            const orderToggle = document.getElementById('order-toggle');
-            const confettis = document.querySelectorAll('.confetti');
-            if (!orderToggle || !confettis.length) return;
-
-            function playConfetti() {
-                confettis.forEach((el) => {
-                    // fjern eventuell eksisterende animasjon for å retrigge
-                    el.style.animation = 'none';
-                    // tvungen reflow
-                    void el.offsetWidth;
-                    // les ferdig definert delay fra CSS, fallback til 0
-                    const delay = getComputedStyle(el).animationDelay || '0s';
-                    // riktig rekkefølge: navn, varighet, timing, delay, fill-mode
-                    el.style.animation = `fall 2.4s linear ${delay} forwards`;
-                    el.style.opacity = '1';
-
-                    // Fjern inline-animasjon når den er ferdig så vi kan retrigge ved neste klikk
-                    function cleanup() {
-                        el.style.animation = 'none';
-                        el.style.opacity = '';
-                        el.removeEventListener('animationend', cleanup);
-                    }
-                    el.addEventListener('animationend', cleanup);
-                });
-            }
-
-            orderToggle.addEventListener('change', function () {
-                if (orderToggle.checked) playConfetti();
-            });
-        });
-    </script>
 </body>
 </html>

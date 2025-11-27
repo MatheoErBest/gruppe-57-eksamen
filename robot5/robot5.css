@@ -362,7 +362,7 @@ body {
 .confetti-wrap {
     pointer-events: none;
     /* Øk z-index slik at konfetti vises over modal */
-    z-index: 9;
+    z-index: 999;
 }
 
 .confetti {
@@ -391,6 +391,7 @@ body {
 .c9  { left: 90vw; background:#ffd700; animation-delay: 0.64s; }
 .c10 { left: 95vw; background:#00bfff; animation-delay: 0.72s; }
 
+/* Fall animasjon for konfetti */
 @keyframes fall {
     to {
         transform: translateY(110vh) rotate(700deg);
