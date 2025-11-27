@@ -1,9 +1,9 @@
-/* Import Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
 
 /* Global font og styling */
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     margin: 0;
     padding: 0;
 }
@@ -17,7 +17,6 @@ body {
     padding: 40px;
     min-height: 100vh;
     background: linear-gradient(180deg, silver, #345412, #345412, #cab300);
-    font-family: 'Roboto', sans-serif;
 }
 
 /* Fikser at bilde er som jeg vil ha det */
@@ -227,7 +226,7 @@ body {
     height: auto;
     border-radius: 36px;
 }
-/*Bildet blir litt større da men hovrer*/
+/* Bildet blir litt større da man hovrer */
 .stratosphere-bilde:hover {
     transform: scale(1.02);
     transition: transform 0.3s ease;
@@ -246,6 +245,7 @@ body {
 
 }
 
+/* Animasjon for flyet */
 @keyframes fly-loop {
     0% {
         left: -100px;
@@ -282,6 +282,7 @@ body {
     display: none;
 }
 
+/* Starter animasjonen på flyet da checkboxen er sjekket av */
 .animation-toggle:checked ~ .stratosphere-transformed {
     animation: fly-loop 6s linear;
 }
@@ -322,7 +323,7 @@ body {
     background: #2e8b57;
 }
 
-/* POPUP */
+/* bestill popup */
 .popup {
     position: fixed;
     inset: 0;
@@ -335,6 +336,7 @@ body {
     transition: .25s;
 }
 
+/* Gjør bestill popupen synelig når checkbox er sjekket */
 .toggle:checked ~ .popup {
     visibility: visible;
     opacity: 1;
@@ -361,7 +363,6 @@ body {
 /* Konfetti */
 .confetti-wrap {
     pointer-events: none;
-    /* Øk z-index slik at konfetti vises over modal */
     z-index: 999;
 }
 
@@ -373,13 +374,13 @@ body {
     opacity: 0;
 }
 
-/* Når bestill-checkboxen (#order-toggle) er sjekket, spill av konfetti */
+/* Når bestill-checkboxen er sjekket, spill av konfetti */
 .order-toggle:checked ~ .confetti-wrap .confetti {
     animation: fall 2.4s linear forwards;
     opacity: 1;
 }
 
-/* Konfetti-varianter med små staggered delays for bedre effekt */
+/* forskjellige konfettier */
 .c1  { left: 10vw; background:#ff3838; animation-delay: 0s; }
 .c2  { left: 20vw; background:#ffd700; animation-delay: 0.08s; }
 .c3  { left: 30vw; background:#3cb371; animation-delay: 0.16s; }
