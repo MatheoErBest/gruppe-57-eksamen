@@ -2,11 +2,12 @@
 body {
     margin: 0;
     padding: 20px;
-    background: linear-gradient(180deg, #000, #001a66);
+    background: linear-gradient(180deg, #000, #fffb02);
     font-family: "Open Sans", Arial, sans-serif;
     color: #fff;
     display: flex;
-    justify-content: center;
+    flex-direction: column;   /* lagt til */
+    align-items: center;      /* lagt til */
     min-height: 100vh;
 }
 
@@ -202,4 +203,53 @@ body {
         transform: translateY(110vh) rotate(700deg);
         opacity: 0;
     }
+}
+
+.nav-btn {
+    display: inline-block;
+    padding: 10px 16px;
+    background: #00a64f;
+    color: #fff;
+    text-decoration: none;
+    border: 2px solid #006b33;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.nav-btn:hover:not(.nav-current) {
+    background: #008a40;
+    transform: translateY(-2px);
+}
+
+.nav-btn:active:not(.nav-current) {
+    transform: translateY(0);
+}
+
+.nav-current {
+    background: #999;
+    border-color: #666;
+    cursor: default;
+    pointer-events: none;
+}
+
+/* Navigasjonscontainer */
+.nav-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+/* Navigasjonsboks */
+.navigation {
+    background: rgba(0,0,0,0.35);
+    padding: 15px 20px;
+    border-radius: 12px;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    border: 1px solid rgba(255,255,255,0.25);
+    backdrop-filter: blur(4px);
 }
