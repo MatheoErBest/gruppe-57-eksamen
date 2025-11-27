@@ -1,0 +1,635 @@
+/* ===== RESET OG BASISSTILER ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Inkluder padding og border i elementets totale bredde/høyde */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Font-familie for hele siden */
+}
+
+/* ===== BODY STYLING - HOVEDBAKGRUNN OG LAYOUT ===== */
+body {
+    background-color: #0a0a16; /* Mørk blå-svart bakgrunnsfarge */
+    color: #ffffff; /* Hvit tekstfarge */
+    line-height: 1.6; /* Linjeavstand for bedre lesbarhet */
+    background-image: 
+        radial-gradient(circle at 10% 20%, rgba(28, 28, 56, 0.8) 0%, transparent 20%),
+        radial-gradient(circle at 90% 80%, rgba(28, 28, 56, 0.6) 0%, transparent 20%);
+    /* To radiære gradienter for visuell dybde og interesse */
+    min-height: 100vh; /* Minimum høyde på hele viewporten */
+    overflow-x: hidden; /* Skjul horisontal scrolling */
+    padding-bottom: 80px; /* Plass nederst for navigasjonsmenyen */
+}
+
+/* ===== HOVEDCONTAINER FOR INNHOLDET ===== */
+.container {
+    max-width: 1100px; /* Maksimal bredde på innholdet */
+    margin: 0 auto; /* Sentrer containeren horisontalt */
+    padding: 20px; /* Indre padding */
+}
+
+/* ===== HEADER SEKSJON ===== */
+header {
+    text-align: center; /* Sentrer tekst */
+    padding: 40px 20px; /* Vertikal og horisontal padding */
+    margin-bottom: 40px; /* Avstand under header */
+    animation: fadeInDown 1s ease-out; /* Animasjon ved lasting */
+}
+
+/* ===== HOVEDTITTEL ===== */
+h1 {
+    font-size: 4rem; /* Stor font-størrelse */
+    margin-bottom: 10px; /* Avstand under tittelen */
+    color: #b30000; /* Rød farge (Autobot-rød) */
+    text-shadow: 0 0 10px rgba(179, 0, 0, 0.5); /* Rød glød-effekt */
+    letter-spacing: 3px; /* Bokstavavstand for dramatisk effekt */
+    transition: all 0.3s ease; /* Jevn overgang for hover-effekter */
+}
+
+/* Hover-effekt for hovedtittel */
+h1:hover {
+    text-shadow: 0 0 20px rgba(179, 0, 0, 0.8); /* Forsterket glød */
+    transform: scale(1.05); /* Litt forstørrelse */
+}
+
+/* ===== UNDERTEKST ===== */
+.subtitle {
+    font-size: 1.2rem;
+    color: #cccccc; /* Lys grå farge */
+    max-width: 800px; /* Begrens bredden */
+    margin: 0 auto; /* Sentrer horisontalt */
+    animation: fadeIn 1.5s ease-out 0.3s both; /* Forsinket fade-in animasjon */
+}
+
+/* ===== HOVEDINNHOLDSSEKSJON MED GRID LAYOUT ===== */
+.content-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* To like kolonner */
+    gap: 40px; /* Mellomrom mellom kolonnene */
+    margin-bottom: 50px; /* Avstand under */
+    animation: fadeInUp 1s ease-out 0.5s both; /* Animasjon som flytter inn oppover */
+}
+
+/* ===== TEKSTINNHOLD VENSTRE KOLONNE ===== */
+.text-content {
+    padding: 30px; /* Indre padding */
+}
+
+/* Avsnitt i tekstinnhold */
+.text-content p {
+    margin-bottom: 20px; /* Avstand mellom avsnitt */
+    font-size: 1.1rem; /* Litt større tekst */
+    transition: transform 0.3s ease; /* Forberedelse for hover-transform */
+}
+
+/* Hover-effekt for avsnitt */
+.text-content p:hover {
+    transform: translateX(10px); /* Flytt til høyre ved hover */
+}
+
+/* ===== BILDEKONTAINER HØYRE KOLONNE ===== */
+.image-container {
+    border-radius: 10px; /* Avrundede hjørner */
+    overflow: hidden; /* Skjul alt som går utenfor containeren */
+    min-height: 400px; /* Minimum høyde */
+    border: 2px solid #b30000; /* Rød kant */
+    box-shadow: 0 0 20px rgba(179, 0, 0, 0.3); /* Rød skygge */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s ease; /* Overgang for alle egenskaper */
+    position: relative; /* For posisjonering av pseudo-element */
+}
+
+/* Hover-effekt for bildecontainer */
+.image-container:hover {
+    transform: scale(1.03); /* Litt forstørrelse */
+    box-shadow: 0 0 30px rgba(179, 0, 0, 0.6); /* Forsterket skygge */
+    border-color: #ff3333; /* Lysere rød kant */
+}
+
+/* Pseudo-element for gradient overlay */
+.image-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(179, 0, 0, 0.2), transparent);
+    opacity: 0; /* Skjult til å begynne med */
+    transition: opacity 0.5s ease; /* Jevn overgang */
+}
+
+/* Vis gradient overlay ved hover */
+.image-container:hover::after {
+    opacity: 1; /* Full synlighet */
+}
+
+/* Selve bildet */
+.prime-image {
+    width: 100%; /* Full bredde */
+    height: 100%; /* Full høyde */
+    object-fit: cover; /* Dekk hele containeren uten forvrengning */
+    transition: transform 0.5s ease; /* Forberedelse for zoom-animasjon */
+}
+
+/* Zoom-effekt på bildet ved hover */
+.image-container:hover .prime-image {
+    transform: scale(1.1); /* 10% forstørrelse */
+}
+
+/* ===== DEKORATIV SKILLELINJE ===== */
+.divider {
+    height: 2px; /* Tykk linje */
+    background: linear-gradient(to right, transparent, #b30000, transparent);
+    /* Gradient som starter og slutter transparent med rød i midten */
+    margin: 40px 0; /* Vertikal margin */
+    animation: expandWidth 1s ease-out 0.7s both; /* Animasjon som utvider bredden */
+}
+
+/* ===== SPESIFIKASJONSSEKSJON ===== */
+.specs-section {
+    background: rgba(20, 20, 40, 0.7); /* Mørk gjennomsiktig bakgrunn */
+    border-radius: 10px; /* Avrundede hjørner */
+    padding: 30px; /* Indre padding */
+    margin-bottom: 40px; /* Avstand under */
+    border-left: 5px solid #b30000; /* Rød venstrekant */
+    animation: fadeIn 1s ease-out 0.8s both; /* Fade-in animasjon */
+    transition: all 0.3s ease; /* Forberedelse for hover-effekter */
+}
+
+/* Hover-effekt for spesifikasjonsseksjon */
+.specs-section:hover {
+    transform: translateY(-5px); /* Flytt oppover */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Skygge for "løftet" effekt */
+}
+
+/* Overskrift i spesifikasjoner */
+.specs-section h2 {
+    color: #b30000; /* Rød farge */
+    margin-bottom: 20px; /* Avstand under */
+    font-size: 2rem; /* Stor font-størrelse */
+    transition: all 0.3s ease; /* Forberedelse for hover */
+}
+
+/* Hover-effekt for overskrift */
+.specs-section:hover h2 {
+    text-shadow: 0 0 10px rgba(179, 0, 0, 0.5); /* Rød glød */
+}
+
+/* Grid for spesifikasjoner */
+.specs-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* To like kolonner */
+    gap: 20px; /* Mellomrom mellom elementer */
+}
+
+/* Enkelt spesifikasjonselement */
+.spec-item {
+    margin-bottom: 15px; /* Avstand under */
+    padding: 10px; /* Indre padding */
+    border-radius: 5px; /* Lette avrundede hjørner */
+    transition: all 0.3s ease; /* Forberedelse for hover */
+}
+
+/* Hover-effekt for spesifikasjoner */
+.spec-item:hover {
+    background: rgba(179, 0, 0, 0.1); /* Svak rød bakgrunn */
+    transform: translateX(5px); /* Flytt litt til høyre */
+}
+
+/* Fet tekst i spesifikasjoner */
+.spec-item strong {
+    color: #b30000; /* Rød farge */
+}
+
+/* ===== KONTAKTSEKSJON ===== */
+.contact-section {
+    background: rgba(20, 20, 40, 0.7); /* Mørk gjennomsiktig bakgrunn */
+    border-radius: 10px; /* Avrundede hjørner */
+    padding: 30px; /* Indre padding */
+    margin-bottom: 40px; /* Avstand under */
+    border-left: 5px solid #b30000; /* Rød venstrekant */
+    animation: fadeIn 1s ease-out 1s both; /* Forsinket fade-in */
+    transition: all 0.3s ease; /* Forberedelse for hover */
+    position: relative; /* For eventuelle absolutte posisjonerte barn */
+}
+
+/* Hover-effekt for kontaktseksjon */
+.contact-section:hover {
+    transform: translateY(-5px); /* Flytt oppover */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Skygge for "løftet" effekt */
+}
+
+/* Overskrift i kontakt */
+.contact-section h2 {
+    color: #b30000; /* Rød farge */
+    margin-bottom: 20px; /* Avstand under */
+    font-size: 2rem; /* Stor font-størrelse */
+    transition: all 0.3s ease; /* Forberedelse for hover */
+}
+
+/* Hover-effekt for kontakt overskrift */
+.contact-section:hover h2 {
+    text-shadow: 0 0 10px rgba(179, 0, 0, 0.5); /* Rød glød */
+}
+
+/* Kontaktinformasjon */
+.contact-info {
+    font-size: 1.2rem; /* Litt større tekst */
+}
+
+/* Avsnitt i kontaktinfo */
+.contact-info p {
+    margin-bottom: 10px; /* Avstand mellom linjer */
+    transition: all 0.3s ease; /* Forberedelse for hover */
+}
+
+/* Hover-effekt for kontakt avsnitt */
+.contact-info p:hover {
+    transform: translateX(5px); /* Flytt litt til høyre */
+}
+
+/* Telefonnummer spesialstyling */
+.phone {
+    font-size: 1.5rem; /* Større tekst */
+    font-weight: bold; /* Fet tekst */
+    color: #b30000; /* Rød farge */
+    margin: 15px 0; /* Vertikal margin */
+    display: inline-block; /* For transform å fungere */
+    transition: all 0.3s ease; /* Forberedelse for hover */
+}
+
+/* Hover-effekt for telefonnummer */
+.phone:hover {
+    text-shadow: 0 0 10px rgba(179, 0, 0, 0.8); /* Sterk rød glød */
+    transform: scale(1.1); /* Litt forstørrelse */
+}
+
+/* ===== BESTILLINGSKNAPP STYLING ===== */
+.order-btn {
+    display: inline-block;
+    background: linear-gradient(135deg, #b30000, #ff3333); /* Rød gradient */
+    color: white; /* Hvit tekst */
+    border: none; /* Ingen kantlinje */
+    padding: 15px 30px; /* Stor padding */
+    font-size: 1.2rem; /* Stor tekst */
+    font-weight: bold; /* Fet tekst */
+    border-radius: 8px; /* Avrundede hjørner */
+    cursor: pointer; /* Håndpeker ved hover */
+    margin-top: 20px; /* Avstand over */
+    transition: all 0.3s ease; /* Jevn overgang */
+    box-shadow: 0 5px 15px rgba(179, 0, 0, 0.4); /* Rød skygge */
+    position: relative; /* For pseudo-element */
+    overflow: hidden; /* Skjul overløpende pseudo-element */
+}
+
+/* Hover-effekt for bestillingsknapp */
+.order-btn:hover {
+    transform: translateY(-3px); /* Flytt oppover */
+    box-shadow: 0 8px 20px rgba(179, 0, 0, 0.6); /* Forsterket skygge */
+    background: linear-gradient(135deg, #ff3333, #b30000); /* Omvendt gradient */
+}
+
+/* Aktiv tilstand for knapp (når den trykkes) */
+.order-btn:active {
+    transform: translateY(1px); /* Flytt litt ned */
+}
+
+/* Pseudo-element for glidende lys-effekt */
+.order-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%; /* Start utenfor til venstre */
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease; /* Animasjon for posisjon */
+}
+
+/* Animasjon for glidende lys ved hover */
+.order-btn:hover::before {
+    left: 100%; /* Flytt til høyre */
+}
+
+/* ===== GRATULASJONSMELDING STYLING ===== */
+
+/* Skjult checkbox for å kontrollere popup */
+#order-checkbox {
+    display: none; /* Skjul fra brukeren */
+}
+
+/* Gratulasjonspopup overlay */
+.congratulations {
+    position: fixed; /* Fast posisjon over alt annet */
+    top: 0;
+    left: 0;
+    width: 100%; /* Full bredde */
+    height: 100%; /* Full høyde */
+    background: rgba(0, 0, 0, 0.9); /* Mørk gjennomsiktig bakgrunn */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Sentrer vertikalt */
+    align-items: center; /* Sentrer horisontalt */
+    z-index: 2000; /* Høy z-index for å være over alt */
+    opacity: 0; /* Usynlig til å begynne med */
+    visibility: hidden; /* Skjul fra skjermlesere */
+    transition: all 0.5s ease; /* Jevn overgang */
+}
+
+/* Vis popup når checkbox er checked */
+#order-checkbox:checked ~ .congratulations {
+    opacity: 1; /* Full synlighet */
+    visibility: visible; /* Vis for skjermlesere */
+}
+
+/* Innholdsboks i popup */
+.congratulations-content {
+    background: linear-gradient(135deg, #0a0a16, #1a1a2e); /* Mørk gradient bakgrunn */
+    border: 3px solid #b30000; /* Rød kant */
+    border-radius: 15px; /* Avrundede hjørner */
+    padding: 40px; /* Stor padding */
+    text-align: center; /* Sentrert tekst */
+    max-width: 500px; /* Maksimal bredde */
+    width: 90%; /* 90% av forelder på små skjermer */
+    box-shadow: 0 0 40px rgba(179, 0, 0, 0.7); /* Sterk rød skygge */
+    transform: scale(0.8); /* Liten til å begynne med */
+    transition: transform 0.5s ease; /* Forberedelse for skalering */
+}
+
+/* Skaler opp innhold når popup vises */
+#order-checkbox:checked ~ .congratulations .congratulations-content {
+    transform: scale(1); /* Normal størrelse */
+}
+
+/* Overskrift i popup */
+.congratulations h2 {
+    color: #b30000; /* Rød farge */
+    font-size: 2.5rem; /* Stor tekst */
+    margin-bottom: 20px; /* Avstand under */
+    text-shadow: 0 0 15px rgba(179, 0, 0, 0.7); /* Rød glød */
+}
+
+/* Avsnitt i popup */
+.congratulations p {
+    font-size: 1.3rem; /* Litt større tekst */
+    margin-bottom: 30px; /* Avstand under */
+    color: #ffffff; /* Hvit tekst */
+}
+
+/* Lukkeknapp i popup */
+.close-btn {
+    background: #b30000; /* Rød bakgrunn */
+    color: white; /* Hvit tekst */
+    border: none; /* Ingen kantlinje */
+    padding: 12px 25px; /* Padding */
+    font-size: 1.1rem; /* Tekststørrelse */
+    border-radius: 8px; /* Avrundede hjørner */
+    cursor: pointer; /* Håndpeker */
+    transition: all 0.3s ease; /* Jevn overgang */
+}
+
+/* Hover-effekt for lukkeknapp */
+.close-btn:hover {
+    background: #ff3333; /* Lysere rød */
+    transform: scale(1.05); /* Litt forstørrelse */
+}
+
+/* Highlight klasse for viktig tekst */
+.highlight {
+    color: #b30000; /* Rød farge */
+    font-weight: bold; /* Fet tekst */
+}
+
+/* ===== BUNNTEKST ===== */
+footer {
+    text-align: center; /* Sentrert tekst */
+    padding: 30px 0; /* Vertikal padding */
+    margin-top: 50px; /* Avstand over */
+    border-top: 1px solid rgba(179, 0, 0, 0.3); /* Rød kantlinje over */
+    color: #cccccc; /* Lys grå tekst */
+    animation: fadeIn 1s ease-out 1.2s both; /* Forsinket fade-in */
+}
+
+/* Avsnitt i bunntekst */
+footer p {
+    margin-bottom: 10px; /* Avstand mellom linjer */
+    transition: all 0.3s ease; /* Forberedelse for hover */
+}
+
+/* Hover-effekt for bunntekst */
+footer p:hover {
+    color: #ffffff; /* Hvit tekst */
+    transform: scale(1.02); /* Litt forstørrelse */
+}
+
+/* ===== NAVIGASJONSMENY - PLASSERT PÅ BUNNEN ===== */
+.navigation {
+    position: fixed; /* Fast posisjon */
+    bottom: 0; /* Nederst på siden */
+    left: 0; /* Start fra venstre */
+    width: 100%; /* Full bredde */
+    background: rgba(10, 10, 22, 0.95); /* Gjennomsiktig mørk bakgrunn */
+    backdrop-filter: blur(10px); /* Bakgrunns-uskarpeffekt */
+    border-top: 2px solid #b30000; /* Rød kantlinje over */
+    box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.5); /* Skygge som løfter menyen */
+    padding: 15px 0; /* Vertikal padding */
+    z-index: 1000; /* Høy z-index for å være over innhold */
+    display: flex;
+    justify-content: center; /* Sentrer horisontalt */
+    gap: 10px; /* Mellomrom mellom knapper */
+    flex-wrap: wrap; /* Tillat wrapping på små skjermer */
+}
+
+/* Navigasjonsknapper */
+.nav-btn {
+    padding: 12px 20px; /* Padding */
+    background: rgba(30, 30, 50, 0.8); /* Mørk gjennomsiktig bakgrunn */
+    color: #ffffff; /* Hvit tekst */
+    text-decoration: none; /* Fjern understreking */
+    border-radius: 8px; /* Avrundede hjørner */
+    border: 1px solid rgba(179, 0, 0, 0.3); /* Svak rød kant */
+    transition: all 0.3s ease; /* Jevn overgang */
+    font-weight: 500; /* Medium font-vekt */
+    position: relative; /* For pseudo-element */
+    overflow: hidden; /* Skjul overløpende pseudo-element */
+}
+
+/* Hover-effekt for navigasjonsknapper */
+.nav-btn:hover {
+    background: rgba(179, 0, 0, 0.2); /* Rød gjennomsiktig bakgrunn */
+    transform: translateY(-3px); /* Flytt oppover */
+    box-shadow: 0 5px 15px rgba(179, 0, 0, 0.3); /* Rød skygge */
+    border-color: #b30000; /* Sterkere rød kant */
+}
+
+/* Pseudo-element for glidende lys-effekt */
+.nav-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%; /* Start utenfor til venstre */
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(179, 0, 0, 0.2), transparent);
+    transition: left 0.5s ease; /* Animasjon for posisjon */
+}
+
+/* Animasjon for glidende lys ved hover */
+.nav-btn:hover::before {
+    left: 100%; /* Flytt til høyre */
+}
+
+/* Aktuell side i navigasjon (ikke en lenke) */
+.nav-current {
+    background: rgba(179, 0, 0, 0.3); /* Rødere bakgrunn */
+    border-color: #b30000; /* Sterk rød kant */
+    box-shadow: 0 0 15px rgba(179, 0, 0, 0.5); /* Rød glød */
+    cursor: default; /* Standard cursor (ikke hånd) */
+}
+
+/* Deaktiver hover for aktuell side */
+.nav-current:hover {
+    transform: none; /* Ingen transform */
+    box-shadow: 0 0 15px rgba(179, 0, 0, 0.5); /* Behold samme skygge */
+}
+
+/* ===== ANIMASJONER ===== */
+
+/* Fade inn med bevegelse nedover */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px); /* Start 30px høyere */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Slutt på normal posisjon */
+    }
+}
+
+/* Fade inn med bevegelse oppover */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px); /* Start 30px lavere */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Slutt på normal posisjon */
+    }
+}
+
+/* Enkel fade inn animasjon */
+@keyframes fadeIn {
+    from {
+        opacity: 0; /* Usynlig */
+    }
+    to {
+        opacity: 1; /* Fullt synlig */
+    }
+}
+
+/* Utvidende bredde animasjon */
+@keyframes expandWidth {
+    from {
+        width: 0%; /* Start med ingen bredde */
+    }
+    to {
+        width: 100%; /* Slutt med full bredde */
+    }
+}
+
+/* Pulsing effect for important elements */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(179, 0, 0, 0.4); /* Ingen skygge */
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(179, 0, 0, 0); /* Stor gjennomsiktig skygge */
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(179, 0, 0, 0); /* Tilbake til ingen skygge */
+    }
+}
+
+/* Pulsering animasjon klasse */
+.pulse {
+    animation: pulse 2s infinite; /* Uendelig repetisjon hvert 2. sekund */
+}
+
+/* Flytende animasjon */
+@keyframes float {
+    0% {
+        transform: translateY(0px); /* Normal posisjon */
+    }
+    50% {
+        transform: translateY(-10px); /* Flytt opp 10px */
+    }
+    100% {
+        transform: translateY(0px); /* Tilbake til normal */
+    }
+}
+
+/* Flytende animasjon klasse */
+.float {
+    animation: float 3s ease-in-out infinite; /* Uendelig flytende bevegelse */
+}
+
+/* ===== RESPONSIVT DESIGN ===== */
+
+/* Tablet og mindre skjermer */
+@media (max-width: 768px) {
+    .content-section {
+        grid-template-columns: 1fr; /* En kolonne istedenfor to */
+    }
+    
+    h1 {
+        font-size: 2.5rem; /* Mindre tittel */
+    }
+    
+    .specs-grid {
+        grid-template-columns: 1fr; /* En kolonne for spesifikasjoner */
+    }
+    
+    .navigation {
+        padding: 10px 5px; /* Mindre padding */
+        gap: 5px; /* Mindre mellomrom */
+    }
+    
+    .nav-btn {
+        padding: 10px 15px; /* Mindre knapper */
+        font-size: 0.9rem; /* Mindre tekst */
+    }
+    
+    .congratulations-content {
+        padding: 30px 20px; /* Mindre padding */
+    }
+    
+    .congratulations h2 {
+        font-size: 2rem; /* Mindre overskrift */
+    }
+}
+
+/* Mobiltelefoner */
+@media (max-width: 480px) {
+    .navigation {
+        flex-direction: column; /* Vertikal layout */
+        align-items: center; /* Sentrer elementer */
+        padding: 10px; /* Mindre padding */
+    }
+    
+    .nav-btn {
+        width: 90%; /* Bred knapper */
+        text-align: center; /* Sentrert tekst */
+    }
+}
+
+/* jeg har brukt AI for hjelpe meg lagge buttons med spesefik plassering (button 1-5, og startside knappen
+feltet for at det skal tilpasset og bli brukt på mobiltelefon fikk jeg også hjelå av AI til å fullføre
+lingrene hoover/smooth effekt når du går over knappene fikk jeg hjelp av AI 
+brukt AI for å hjelpe meg med padding/font-size/width/border- radius etc for å spare tid
+
+ting som simple hoover effekt har jeg gjort selv(så på gammel kreativ webprosjekt videor fra alexander), bakgrunnbille har jeg gjort selv, text animasjon ble ikke brukt av AI men google søking(brukte w3school for å hjelpe meg)
+koden har blitt organnisert og validert av AI*/

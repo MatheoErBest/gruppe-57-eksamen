@@ -1,20 +1,115 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="no">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="robot4.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Megatron</title>
+  <link rel="stylesheet" href="Megatron.css">
 </head>
 <body>
-    <nav class="navigation">
-        <a href="../robot1/robot1.html" class="nav-btn">← Robot 1</a>
-        <a href="../robot2/robot2.html" class="nav-btn">Robot 2</a>
-        <a href="../robot3/robot3.html" class="nav-btn">Robot 3</a>
-        <span class="nav-btn nav-current">Robot 4</span>
-        <a href="../robot5/robot5.html" class="nav-btn">robot5</a>
-        <a href="../main.html" class="nav-btn">Startside</a>
-    </nav>
-    
+
+  <!--Toggles-->
+  <input type="checkbox" id="order-toggle" aria-hidden="true">
+  <input type="checkbox" id="kontakt-toggle" aria-hidden="true">
+
+  <div class="page">
+
+    <!--Bilde-->
+    <div class="image-box">
+      <img src="Bilder/Megatron.png" alt="Megatron">
+    </div>
+
+    <!--Midtkolonne-->
+    <div class="middle">
+      <div class="tittel-box"><h1>Megatron</h1></div>
+
+      <div class="innhold-box">
+        <h3>Innhold</h3>
+        <p>Megatron er den kompromissløse lederen av Decepticons og et av de mest ikoniske ansiktene i Transformers-universet.</p>
+
+        <h4>Opprinnelse og bakgrunn</h4>
+        <p>Opprinnelig en gladiator og gruvedriver på Cybertron, steg Megatron til makt gjennom styrke, taktikk og en visjon om en ny orden. Hans ideologi kolliderer gjentatte ganger med Optimus Primes idealer, og det har resultert i utallige konflikter som har formet galaksens historie.</p>
+
+        <h4>Egenskaper og våpen</h4>
+        <ul>
+          <li>Primærvåpen: Fusion Cannon</li>
+          <li>Styrke: Overmenneskelig — tåler ekstreme påkjenninger</li>
+          <li>Strateg: Dominerende taktiker, bruker både terror og teknikk</li>
+        </ul>
+
+        <h4>Notable hendelser</h4>
+        <p>Fra arenaens sand til slagmarkens ruiner — Megatron har deltatt i alt fra småkupp til fullskala interplanetære kriger. Han er beryktet for å ofre alt for seier.</p>
+
+        <p><em>Bestill din egen Megatron-figur i dag. Eller ikke. Han kommer uansett.</em></p>
+      </div>
+
+    </div>
+
+    <!-Specs-->
+    <div class="right">
+      <div class="specs-box">
+        <h2>Specs</h2>
+        <ul>
+          <li>Rolle: Decepticon leder</li>
+          <li>Høyde: 10m-12m</li>
+          <li>Vekt: <i>Klassifisert</i></li>
+        </ul>
+      </div>
+
+      <!--Knapper-->
+      <div class="buttons">
+        <label for="order-toggle" class="btn cta">Bestill</label>
+        <label for="kontakt-toggle" class="btn kontakt">Kontakt oss</label>
+      </div>
+    </div>
+  </div>
+
+  <!--BESTILL-MODAL-->
+  <div class="modal order-modal">
+    <div class="backdrop"></div>
+
+    <div class="sheet">
+      <h2>Kjøp fullført!</h2>
+      <p>Bestillingen er mottatt. Megatron er på vei.</p>
+
+      <label for="order-toggle" class="close">Lukk</label>
+
+      <!--24 confetti-spans-->
+      <div class="confetti">
+        <span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span>
+      </div>
+    </div>
+  </div>
+
+  <!--KONTAKT-MODAL-->
+  <div class="modal kontakt-modal">
+    <div class="backdrop"></div>
+
+    <div class="sheet">
+      <h2>Kontaktinformasjon</h2>
+      <p><strong>E-post:</strong> support@cybertron.no</p>
+      <p><strong>Telefon:</strong> +47 998 88 777</p>
+      <p><strong>Adresse:</strong> Kaon, Cybertron</p>
+      <p><strong>Åpningstider:</strong> Mandag–Fredag 09:00–17:00 (Cybertronisk tid kan variere)</p>
+
+      <label for="kontakt-toggle" class="close">Lukk</label>
+    </div>
+  </div>
+
+  <!--Navigasjon-->
+  <nav class="navigation">
+    <a href="../robot1/robot1.html" class="nav-btn">← Robot 1</a>
+    <a href="../robot2/robot2.html" class="nav-btn">Robot 2</a>
+    <a href="../robot3/robot3.html" class="nav-btn">Robot 3</a>
+    <span class="nav-btn nav-current">Robot 4</span>
+    <a href="../robot5/robot5.html" class="nav-btn">Robot 5</a>
+    <a href="../main.html" class="nav-btn">Startside</a>
+  </nav>
+
 </body>
 </html>

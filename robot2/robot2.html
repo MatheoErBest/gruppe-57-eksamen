@@ -1,12 +1,160 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="no">
 <head>
+    <!-- Dokumentets grunnleggende innstillinger -->
     <meta charset="UTF-8">
+    <!-- Responsiv design for alle enheter -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="robot2.css">
+    <!-- Tittel som vises i nettleserens fane -->
+    <title>Optimus Prime - Autobot Leader</title>
+    <!-- Kobling til ekstern stilarkfil -->
+    <link rel="stylesheet" href="eksamenoppgv.css">
 </head>
+
+
 <body>
+    <!-- Hovedcontainer som omslutter alt innhold -->
+    <div class="container">
+        
+        <!-- Toppseksjon med hovedtittel og introduksjon -->
+        <header>
+            <!-- Hovedoverskrift med flytende animasjon -->
+            <h1 class="float">OPTIMUS PRIME</h1>
+            <!-- Undertekst som beskriver Optimus Prime -->
+            <p class="subtitle">
+                Møt Optimus Prime, den legendariske lederen av Autobotene, 
+                en frihetselskende fraksjon fra planeten Cybertron.
+            </p>
+        </header>
+        
+        <!-- Hovedinnholdsseksjon med tekst og bilde -->
+        <div class="content-section">
+            <!-- Venstre kolonne: Tekstlig innhold -->
+            <div class="text-content">
+                <!-- Første beskrivende avsnitt -->
+                <p>
+                    Optimus Prime er ikke en vanlig robot. Han er en vis og medfølende leder 
+                    som kombinerer strategisk genialitet med uovertruffen styrke.
+                </p>
+                
+                <!-- Andre beskrivende avsnitt -->
+                <p>
+                    Optimus Prime responderer raskt på trusler, tilpasser seg enhver situasjon 
+                    og håndterer de mest krevende oppdrag. Enten det gjelder å beskytte jorden, 
+                    lede Autobotene eller kjempe mot Decepticons, leverer Optimus Prime med en 
+                    pålitelighet som ingen andre kan matche.
+                </p>
+                
+                <!-- Tredje beskrivende avsnitt -->
+                <p>
+                    Dette er lederen for deg som tror på frihet for alle levende vesener – 
+                    og som ser ikonisk ut mens han kjemper for den.
+                </p>
+            </div>
+            
+            <!-- Høyre kolonne: Bilde med animasjoner -->
+            <div class="image-container pulse">
+                <!-- Hovedbilde av Optimus Prime -->
+                <img src="TF_One_Optimus_Prime_render.webp" alt="Optimus Prime" class="prime-image">
+            </div>
+        </div>
+        
+        <!-- Dekorativ skillelinje mellom seksjoner -->
+        <div class="divider"></div>
+        
+        <!-- Spesifikasjonsseksjon med tekniske detaljer -->
+        <div class="specs-section">
+            <!-- Overskrift for spesifikasjoner -->
+            <h2>Spesifikasjoner</h2>
+            <!-- Grid layout for spesifikasjonselementer -->
+            <div class="specs-grid">
+                <!-- Spesifikasjon for vekt -->
+                <div class="spec-item">
+                    <strong>Vekt:</strong> ca. 4 500 kg
+                </div>
+                <!-- Spesifikasjon for høyde -->
+                <div class="spec-item">
+                    <strong>Høyde:</strong> ca. 8,5 m (robotmodus)
+                </div>
+                <!-- Spesifikasjon for transformasjon -->
+                <div class="spec-item">
+                    <strong>Transformasjon:</strong> Peterbilt 379 lastebil
+                </div>
+                <!-- Spesifikasjon for våpen -->
+                <div class="spec-item">
+                    <strong>Våpen:</strong> Ion Rifle og Energon Axe
+                </div>
+            </div>
+        </div>
+        
+        <!-- Kontaktseksjon med kontaktinformasjon -->
+        <div class="contact-section">
+            <!-- Overskrift for kontakt -->
+            <h2>Kontakt oss</h2>
+            <!-- Kontaktinformasjon -->
+            <div class="contact-info">
+                <!-- Telefonnummer med spesiell styling -->
+                <p class="phone">470 67 767</p>
+                <!-- Adresse -->
+                <p>Kirkegata 24, 0153 Oslo</p>
+                <!-- Bestillingsknapp som aktiverer popup -->
+                <label for="order-checkbox" class="order-btn">
+                    Bestill Optimus Prime
+                </label>
+            </div>
+        </div>
+        
+        <!-- Bunntekst med copyright og sitat -->
+        <footer>
+            <!-- Sitat fra Optimus Prime -->
+            <p>
+                Optimus Prime - Autobot Leader | 
+                "Freedom is the right of all sentient beings"
+            </p>
+            <!-- Copyright informasjon -->
+            <p>&copy; 2023 Autobot Command. All rights reserved.</p>
+        </footer>
+    </div>
     
+    <!-- Skjult checkbox som kontrollerer popup-vindu -->
+    <input type="checkbox" id="order-checkbox">
+    
+    <!-- Popup for bestillingsbekreftelse -->
+    <div class="congratulations">
+        <!-- Innhold i popup-vinduet -->
+        <div class="congratulations-content">
+            <!-- Overskrift for gratulasjonsmelding -->
+            <h2>Gratulerer!</h2>
+            <!-- Bekreftelse på bestilling -->
+            <p>Du har bestilt Optimus Prime!</p>
+            <!-- Leveringsinformasjon -->
+            <p>
+                Din Autobot-leder vil bli levert til Kirkegata 24, 0153 Oslo 
+                innen 3-5 arbeidsdager.
+            </p>
+            <!-- Knapp for å lukke popup -->
+            <label for="order-checkbox" class="close-btn">
+                Lukk
+            </label>
+        </div>
+    </div>
+    
+    <!-- Navigasjonsmeny fast plassert på bunnen -->
+    <nav class="navigation">
+        <!-- Lenke til Robot 1 -->
+        <a href="../robot1/robot1.html" class="nav-btn">← Robot 1</a>
+        <!-- Nåværende side (ikke klikkbar) -->
+        <span class="nav-btn nav-current">Robot 2</span>
+        <!-- Lenke til Robot 3 -->
+        <a href="../robot3/robot3.html" class="nav-btn">Robot 3</a>
+        <!-- Lenke til Robot 4 -->
+        <a href="../robot4/robot4.html" class="nav-btn">Robot 4</a>
+        <!-- Lenke til Robot 5 -->
+        <a href="../robot5/robot5.html" class="nav-btn">Robot 5</a>
+        <!-- Lenke tilbake til hovedsiden -->
+        <a href="../main.html" class="nav-btn">Startside</a>
+    </nav>
 </body>
 </html>
+
+ <!-- html har blir laget uten av ai, jeg kjørt koden igjen validation igjennom AI for at det ikke er noe feil eller at koden er uryddig, hjelpen jeg brukte for å komme frem til denne koden var fra mine med studenter og videon som alexander har formidlet i faget -->
