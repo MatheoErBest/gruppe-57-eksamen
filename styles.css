@@ -1,0 +1,204 @@
+html {
+    scroll-snap-type: y mandatory;
+}
+
+a, a:visited {
+    color: white; 
+    text-decoration: none; 
+}
+
+a:hover {
+    text-decoration: none; /* Sikrer at ingen understrek kommer ved hover heller */
+}
+
+body {
+    background-color: rgba(10, 10, 10, 0.85);
+    text-decoration: none;
+}
+
+.header {
+    width: 100%;
+    font-size: 3rem;
+    padding: 1%;
+    color: white;
+    border: 2px solid white;
+    border-top: 0;
+    border-left: 0;
+    position: fixed;
+    background-color:rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    left: 0;
+    top: 0;
+    z-index: 1000;
+    
+}
+
+.hero {
+    padding: 0; 
+    background-image: url(images/backgrounds/background_space.png);
+}
+
+.strip {
+    background-image: url(images/backgrounds/background_space.png);
+    height: 100dvh;
+    width: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    color: white;
+    scroll-snap-align: start;
+    background-size: cover;
+    background-position: top;
+}
+
+        .info-card {
+            background: rgba(0, 0, 0, 0.6); 
+            padding: 40px;
+            border-radius: 20px;
+            max-width: 600px;
+            width: 90%; 
+            text-align: center;
+            backdrop-filter: blur(8px); 
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            transform: translateY(20px);
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+
+        .info-card h2 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+
+        }
+
+        .info-card p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            color: #e0e0e0;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+.gallery {
+    display: flex;
+    width: 80%;
+    height: 70vh;
+    overflow: hidden;
+
+}
+
+.panel {
+    flex: 1;
+
+transition: flex 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Fått hjelp av AI til å hjelpe meg med denne animasjonen*/
+
+    background-size: cover;
+    
+
+    display: flex;
+
+    align-items: flex-end; 
+    padding: 20px;
+    color: white;
+    position: relative;
+    cursor: pointer;
+}
+
+.panel:hover {
+    flex: 15; 
+}
+
+.panel h3 {
+    font-size: 2rem;
+    opacity: 0; 
+    transition: opacity 0.3s ease 0.4s; 
+    text-shadow: 0 2px 5px rgba(0,0,0,0.8);
+}
+
+.panel:hover h3 {
+    opacity: 1; 
+}
+
+.panel1 { background-image: url('images/robots/bumblebee.png'); 
+}
+
+.panel2 { background-image: url('images/robots/optimus-prime-png.png');
+}
+
+.panel3 { background-image: url('images/robots/wheelie.png');
+    background-position: center;
+}
+
+.panel4 { background-image: url('images/robots/megatron.png');
+}
+
+.panel5 { background-image: url('images/robots/stratosphere.png');
+
+}
+
+
+/* --- OPPDATERTE FARGER BASERT PÅ NY REKKEFØLGE --- */
+
+/* Strip 1: Bumblebee - Signal Gul */
+.strip1 .info-card h2 {
+    color: #EACE00;
+    text-shadow: 0 0 15px rgba(234, 206, 0, 0.8);
+}
+
+/* Strip 2: Optimus Prime - Dyp Rød */
+.strip2 .info-card h2 {
+    color: #CC0000;
+    text-shadow: 0 0 15px rgba(204, 0, 0, 0.8);
+}
+
+/* Strip 3: Wheelie - Elektrisk Blå */
+.strip3 .info-card h2 {
+    color: #1E90FF;
+    text-shadow: 0 0 15px rgba(30, 144, 255, 0.8);
+}
+
+/* Strip 4: Megatron - Metallisk Sølv/Grå */
+.strip4 .info-card h2 {
+    color: #A9A9A9;
+    text-shadow: 0 0 15px rgba(169, 169, 169, 0.8);
+}
+
+/* Strip 5: Stratosphere - Hvit */
+.strip5 .info-card h2 {
+    color: #FFFFFF;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+}
+
+.btn {
+    display: inline-block;
+    background: linear-gradient(135deg, #b30000, #ff3333); /* Rød gradient */
+    color: white; /* Hvit tekst */
+    border: none; /* Ingen kantlinje */
+    padding: 15px 30px; /* Stor padding */
+    font-size: 1.2rem; /* Stor tekst */
+    font-weight: bold; /* Fet tekst */
+    border-radius: 8px; /* Avrundede hjørner */
+    cursor: pointer; /* Håndpeker ved hover */
+    margin-top: 20px; /* Avstand over */
+    transition: all 0.3s ease; /* Jevn overgang */
+    box-shadow: 0 5px 15px rgba(179, 0, 0, 0.4); /* Rød skygge */
+    position: relative; /* For pseudo-element */
+    overflow: hidden; /* Skjul overløpende pseudo-element */
+}
+
+.btn:hover {
+    transform: translateY(-3px); /* Flytt oppover */
+    box-shadow: 0 8px 20px rgba(179, 0, 0, 0.6); /* Forsterket skygge */
+    background: linear-gradient(135deg, #ff3333, #b30000); /* Omvendt gradient */
+}
